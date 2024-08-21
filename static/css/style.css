@@ -1,0 +1,61 @@
+/* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Layout */
+.dashboard {
+    display: flex;
+}
+
+.sidebar {
+    width: 250px;
+    background:#000 ; /* Green background for sidebar */
+    color: #fff; /* White text color */
+    height: 100vh;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    overflow-y: auto; /* Allows scrolling if content exceeds viewport */
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 20px 0;
+}
+
+.sidebar ul li a {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    background: #000; /* Green background for links */
+    transition: background 0.3s, color 0.3s; /* Smooth transition */
+}
+
+.sidebar ul li a:hover {
+    background:#008000; /* Black background on hover */
+    color: #000; /* Energetic green text on hover */
+}
+
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    flex: 1;
+    background: #ecf0f1;
+    min-height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+}
+
