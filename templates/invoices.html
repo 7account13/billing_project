@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoices</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .btn {
+            display: block;
+            width: 200px;
+            margin: 20px auto;
+            padding: 10px;
+            text-align: center;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Invoices</h1>
+
+    {% if invoices %}
+        <table>
+            <tr>
+                <th>Invoice Number</th>
+                <th>Name</th>
+                <th>GST</th>
+                <th>Billing Address</th>
+                <th>Shipping Address</th>
+                <th>Payment Terms</th>
+                <th>Invoice Date</th>
+                <th>Invoice Due Date</th>
+                <th>Product</th>
+                <th>Selling Price</th>
+                <th>Quantity</th>
+                <th>Total Cost</th>
+                <th>Actions</th>
+            </tr>
+            {% for invoice in invoices %}
+            <tr>
+                <td>{{ invoice[0] }}</td>
+                <td>{{ invoice[1] }}</td>
+                <td>{{ invoice[2] }}</td>
+                <td>{{ invoice[3] }}</td>
+                <td>{{ invoice[4] }}</td>
+                <td>{{ invoice[5] }}</td>
+                <td>{{ invoice[6] }}</td>
+                <td>{{ invoice[7] }}</td>
+                <td>{{ invoice[8] }}</td>
+                <td>{{ invoice[9] }}</td>
+                <td>{{ invoice[10] }}</td>
+                <td>{{ invoice[11] }}</td>
+                <td><a href="{{ url_for('edit_invoice', id=invoice[0]) }}">Edit</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a href="{{ url_for('add_invoice') }}" class="btn">Add New Invoice</a>
+    {% else %}
+        <a href="{{ url_for('invoice') }}" class="btn">Create Invoice</a>
+    {% endif %}
+
+    <br>
+    <a href="{{ url_for('dashboard') }}" class="btn">Back to Dashboard</a>
+</body>
+</html>

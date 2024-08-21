@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Customer</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-container {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .form-container input[type="text"],
+        .form-container input[type="email"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Customer</h1>
+    <div class="form-container">
+        <form action="/edit_customer/{{ customer[0] }}" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" value="{{ customer[1] }}" required><br><br>
+            
+            <label for="gst">GST:</label><br>
+            <input type="text" id="gst" name="gst" value="{{ customer[2] }}" required><br><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email" value="{{ customer[3] }}"><br><br>
+
+            <label for="phone">Phone:</label><br>
+            <input type="text" id="phone" name="phone" value="{{ customer[4] }}"><br><br>
+
+            <label for="billing_address">Billing Address:</label><br>
+            <input type="text" id="billing_address" name="billing_address" value="{{ customer[5] }}"><br><br>
+
+            <label for="shipping_address">Shipping Address:</label><br>
+            <input type="text" id="shipping_address" name="shipping_address" value="{{ customer[6] }}"><br><br>
+
+            <button type="submit">Update Customer</button>
+        </form>
+    </div>
+    <br>
+    <a href="{{ url_for('customers') }}" class="btn">Back to Customers</a>
+</body>
+</html>

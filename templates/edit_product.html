@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Product</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        form {
+            width: 50%;
+            margin: 20px auto;
+            padding: 20px;
+            background: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <h1>Edit Product</h1>
+    <form method="POST">
+        <input type="hidden" name="id" value="{{ product[0] }}">
+
+        <label for="name">Product Name:</label>
+        <input type="text" id="name" name="name" value="{{ product[1] }}" required>
+
+        <label for="unit">Unit:</label>
+        <input type="text" id="unit" name="unit" value="{{ product[2] }}" required>
+
+        <label for="hsn_code">HSN Code:</label>
+        <input type="text" id="hsn_code" name="hsn_code" value="{{ product[3] }}" required>
+
+        <label for="selling_price">Selling Price:</label>
+        <input type="number" id="selling_price" name="selling_price" value="{{ product[4] }}" step="0.01" required>
+
+        <label for="intra_state_tax_rate">Intra State Tax Rate:</label>
+        <input type="number" id="intra_state_tax_rate" name="intra_state_tax_rate" value="{{ product[5] }}" step="0.01" required>
+
+        <label for="inter_state_tax_rate">Inter State Tax Rate:</label>
+        <input type="number" id="inter_state_tax_rate" name="inter_state_tax_rate" value="{{ product[6] }}" step="0.01" required>
+
+        <input type="submit" value="Update Product">
+    </form>
+</body>
+</html>

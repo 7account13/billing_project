@@ -1,0 +1,28 @@
+\{% extends 'base.html' %}
+
+{% block title %}Dashboard{% endblock %}
+
+{% block content %}
+<div class="dashboard">
+    <nav class="sidebar">
+        <ul>
+            <li><a href="{{ url_for('dashboard') }}">Home</a></li>
+            <li><a href="{{ url_for('customers') }}">Customers</a></li>
+            <li><a href="{{ url_for('products') }}">Products</a></li>
+            <li><a href="{{ url_for('quotes') }}">Quotes</a></li>
+            <li><a href="{{ url_for('invoice') }}">Invoice</a></li>
+            <li><a href="{{ url_for('purchase_orders') }}">Purchase Orders</a></li>
+            <li><a href="{{ url_for('payments_received') }}">Payments Received</a></li>
+            <li><a href="{{ url_for('expenses') }}">Expenses</a></li>
+            <li><a href="{{ url_for('gst_filings') }}">GST Filings</a></li>
+            <li><a href="{{ url_for('reports') }}">Reports</a></li>
+        </ul>
+    </nav>
+    <main class="content">
+        <h1>KM Agarbhatti & Job Works</h1>
+        <!-- Content for each page will be rendered here -->
+        <p>Data visualizations will appear here </p>
+    </main>
+</div>
+{% endblock %}
+
