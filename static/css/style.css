@@ -1,61 +1,36 @@
-/* Basic Reset */
-* {
+/* Base styles for the application */
+
+body {
+    font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    background-color: #f4f4f4;
 }
 
-/* Layout */
-.dashboard {
-    display: flex;
-}
-
-.sidebar {
-    width: 250px;
-    background:#000 ; /* Green background for sidebar */
-    color: #fff; /* White text color */
-    height: 100vh;
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
-    position: fixed;
-    top: 0;
-    left: 0;
-    overflow-y: auto; /* Allows scrolling if content exceeds viewport */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.sidebar ul {
-    list-style: none;
-    padding: 0;
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin-top: 0;
 }
 
-.sidebar ul li {
-    margin: 20px 0;
+p {
+    line-height: 1.6;
+    color: #666;
 }
 
-.sidebar ul li a {
-    color: #fff; /* White text color */
+a {
+    color: #007bff;
     text-decoration: none;
-    font-size: 18px;
-    display: block;
-    padding: 10px;
-    border-radius: 5px;
-    background: #000; /* Green background for links */
-    transition: background 0.3s, color 0.3s; /* Smooth transition */
 }
 
-.sidebar ul li a:hover {
-    background:#008000; /* Black background on hover */
-    color: #000; /* Energetic green text on hover */
+a:hover {
+    text-decoration: underline;
 }
-
-.content {
-    margin-left: 250px;
-    padding: 20px;
-    flex: 1;
-    background: #ecf0f1;
-    min-height: 100vh;
-}
-
-h1 {
-    margin-bottom: 20px;
-}
-

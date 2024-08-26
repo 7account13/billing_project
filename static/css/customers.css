@@ -1,0 +1,71 @@
+/* Styles for the Customers page */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #fff;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+}
+
+th, td {
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.btn, .btn2 {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.btn {
+    background-color: #007bff;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn2 {
+    background-color: #6c757d;
+}
+
+.btn2:hover {
+    background-color: #5a6268;
+}
+
+.relative-container {
+    position: relative;
+    height: 100vh;
+    padding: 10px;
+}
+
+.relative-container button {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
