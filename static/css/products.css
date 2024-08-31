@@ -41,34 +41,31 @@ a:hover {
     text-decoration: underline;
 }
 
-button, .button {
+.button, .button1 {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+    display: inline-block;
+    margin: 10px;
+}
+
+.button:hover, .button1:hover {
+    background-color: #0056b3;
+}
+
+.button {
     position: fixed;
     top: 10px;
     right: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
 }
 
-button:hover, .button:hover {
-    background-color: #0056b3;
-}
-.button1
-{  position: fixed;
+.button1 {
     position: fixed;
     top: 10px;
     left: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 5px;
-    text-align: center;
 }
