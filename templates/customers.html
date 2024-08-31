@@ -35,8 +35,7 @@
             {% endfor %}
         </table>
         <a href="{{ url_for('add_customer') }}" class="btn">Add New Customer</a>
-    {% else %}
-        <a href="{{ url_for('add_customer') }}" class="btn">Create New Customer</a>
+    
     {% endif %}
 
     <a href="{{ url_for('dashboard') }}" class="btn2">Back to Dashboard</a>
