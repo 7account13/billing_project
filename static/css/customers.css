@@ -43,6 +43,9 @@ th {
 }
 
 .btn {
+    position: fixed;
+    top: 10px;
+    right: 10px;
     background-color: #007bff;
 }
 
@@ -51,6 +54,9 @@ th {
 }
 
 .btn2 {
+    position:fixed;
+    top: 10px;
+    left: 10px;
     background-color: #6c757d;
 }
 
