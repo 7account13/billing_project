@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for,jsonify
 import sqlite3
 
 app = Flask(__name__)
@@ -159,7 +159,37 @@ def add_invoice():
     if request.method == 'POST':
         # Logic to save the new invoice
         return redirect(url_for('invoices'))
+    def get_db_connection():
+        conn = sqlite3.connect('km.db')
+        conn.row_factory = sqlite3.Row
+        return conn
+
+
+    
+
     return render_template('add_invoice.html')
+    def get_db_connection():
+        conn = sqlite3.connect('km.db')
+        conn.row_factory = sqlite3.Row
+        return conn
+
+    def create_invoice():
+        customer_id = request.form['customer']
+        product_id = request.form['product']
+        quantity = request.form['quantity']
+
+        conn = get_db_connection()
+        product = conn.execute('SELECT selling_price FROM products WHERE id = ?', (product_id,)).fetchone()
+        rate = product['selling_price']
+        total = int(quantity) * rate
+        conn.execute(
+        'INSERT INTO invoices (customer_id, product_id, quantity, rate, total) VALUES (?, ?, ?, ?, ?)',
+        (customer_id, product_id, quantity, rate, total)
+    )
+        conn.commit()
+        conn.close()
+    return jsonify({'success': True})
+
 
 
 

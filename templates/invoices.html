@@ -82,9 +82,9 @@
             </tr>
             {% endfor %}
         </table>
-        <a href="{{ url_for('add_invoice') }}" class="btn">Add New Invoice</a>
+        <a href="{{ url_for('invoice') }}" class="btn">Add New Invoice</a>
     {% else %}
-        <a href="{{ url_for('invoice') }}" class="btn">Create Invoice</a>
+        <a href="{{ url_for('add_invoice') }}" class="btn">Create Invoice</a>
     {% endif %}
 
     <br>
